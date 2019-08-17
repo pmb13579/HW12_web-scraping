@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hot Finds</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h2>Mission to Mars</h2>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row" id="craiglist-listings">
+      <div class="col-md-12">
+        <h3>LATEST MARS NEWS</h3>
+        <h5>{{scraping1.news_title}}</h5>
+        {{scraping1.news_p}}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <BR>
+        <h3>FEATURED MARS IMAGE</h3>
+        <BR>
+        <img width = "300" src = {{scraping1.featured_image_url}} alt = "my image" />
+        <BR>
+      </div>
+      <div class="col-md-6">
+        <h3>CURRENT WEATHER ON MARS</h3>
+        {{scraping1.mars_weather}}
+        <h3>MARS FACTS</h3>
+        <div>{{scraping1.html_table|safe}}</div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+  <BR>  
+  <h3>MARS HEMISPHERES</h3>
+    <div class="row">
+    <div class="col-md-6">
+      <BR>
+      <img width="300" src = {{scraping1.hemisphere_image_urls[0]["img_url"]}} alt = "my image" />
+      <BR>
+      Valles Marineris Hemisphere enhanced
+      <BR>
+    </div>
+    <div class="col-md-6">
+      <BR>
+      <img width="300" src = {{scraping1.hemisphere_image_urls[1]["img_url"]}} alt = "my image" />
+      <BR>
+      Cerberus Hemisphere enhanced
+      <BR>
+    </div>
+  </div>
+  <!-- First Row -->
+  <div class="row">
+    <div class="col-md-6">
+      <BR>
+      <img width="300" src = {{scraping1.hemisphere_image_urls[2]["img_url"]}} alt = "my image" />
+      <BR>
+      Schiaparelli Hemisphere enhanced
+      <BR>
+    </div>
+    <div class="col-md-6">
+      <BR>
+      <img width="300" src = {{scraping1.hemisphere_image_urls[3]["img_url"]}} alt = "my image" />
+      <BR>
+      Syrtis Major Hemisphere enhanced
+      <BR>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
+
